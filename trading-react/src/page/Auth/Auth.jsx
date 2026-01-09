@@ -11,17 +11,32 @@ export const Auth = () => {
   const location = useLocation();
 
   return (
-    <div className="authContainer relative min-h-screen flex items-center justify-center">
+    // <div className="authContainer relative min-h-screen flex items-center justify-center">
 
-      {/* Glass Login Card */}
-      <div
-        className="
-          bgBlur relative z-10 h-[43rem] w-[39rem] rounded-xl
+    //   {/* Glass Login Card */}
+    //   <div
+    //     className="
+    //       bgBlur relative z-10 h-[43rem] w-[39rem] rounded-xl
+    //       bg-white/20 shadow-2xl shadow-white
+    //       border border-white/10
+    //       flex flex-col items-center justify-center
+    //     "
+    //   >
+
+    <div className="authContainer relative min-h-screen flex items-center justify-center px-4">
+        <div className="
+          bgBlur relative z-10
+          w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+          min-h-[32rem] sm:min-h-[36rem] md:min-h-[40rem]
+          rounded-xl
           bg-white/20 shadow-2xl shadow-white
           border border-white/10
           flex flex-col items-center justify-center
-        "
-      >
+          p-6 sm:p-8 md:p-10
+        ">
+
+
+
         <h1 className="text-white text-6xl font-semibold pb-9">
           Crypto Trading
         </h1>

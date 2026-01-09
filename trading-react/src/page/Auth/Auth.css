@@ -2,20 +2,36 @@
 
 /* Auth.css */
 
-.authContainer {
+/* .authContainer {
     background-image: url("./Asset/futuristic-technology-hologram.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100%;
+} */
+
+.authContainer {
+  background-image: url("./Asset/futuristic-technology-hologram.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 /* Glassmorphism effect */
 .bgBlur {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+
+.authContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
 
 .authContainer {
     background-image: 
