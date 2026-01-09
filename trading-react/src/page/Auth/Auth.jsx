@@ -41,9 +41,9 @@ export const Auth = () => {
 
         <h1 className=" 
         text-white
-          text-3xl sm:text-4xl md:text-5xl
+          text-2xl sm:text-2xl md:text-4xl
           font-semibold
-          pb-4 sm:pb-6
+          pb-4 sm:pb-4
           text-center">
           Crypto Trading
         </h1>
