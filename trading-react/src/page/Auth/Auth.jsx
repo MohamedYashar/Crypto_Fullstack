@@ -24,7 +24,7 @@ export const Auth = () => {
     //   >
 
     // <div className="authContainer relative min-h-screen flex items-center justify-center px-4">
-      <div className= "authContainer min-h-screen overflow-y-auto px-4 flex items-start sm:items-center justify-center">
+      <div className= "authContainer min-h-screen overflow-y-auto px-4 flex items-center justify-center">
          <div className="
           bgBlur relative z-10
           w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
