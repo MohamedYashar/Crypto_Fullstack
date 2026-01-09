@@ -23,21 +23,28 @@ export const Auth = () => {
     //     "
     //   >
 
-    <div className="authContainer relative min-h-screen flex items-center justify-center px-4">
-        <div className="
+    // <div className="authContainer relative min-h-screen flex items-center justify-center px-4">
+      <div className= "authContainer min-h-screen overflow-y-auto px-4 flex items-start sm:items-center justify-center">
+         <div className="
           bgBlur relative z-10
           w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
-          min-h-[32rem] sm:min-h-[36rem] md:min-h-[40rem]
           rounded-xl
           bg-white/20 shadow-2xl shadow-white
           border border-white/10
-          flex flex-col items-center justify-center
+          flex flex-col items-center
+          justify-start sm:justify-center
           p-6 sm:p-8 md:p-10
+          mt-6 sm:mt-0
         ">
 
 
 
-        <h1 className="text-white text-6xl font-semibold pb-9">
+        <h1 className=" 
+        text-white
+          text-3xl sm:text-4xl md:text-5xl
+          font-semibold
+          pb-4 sm:pb-6
+          text-center">
           Crypto Trading
         </h1>
 
