@@ -27,9 +27,9 @@ export const Auth = () => {
       <div className= "authContainer min-h-screen overflow-y-auto px-4 flex items-center justify-center">
          <div className="
           bgBlur relative z-10
-          w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+          w-full max-w-md sm:max-w-md md:max-w-xl lg:max-w-xl
           rounded-xl
-          bg-white/20 shadow-2xl shadow-white
+          bg-white/15 shadow-xl shadow-white
           border border-white/10
           flex flex-col items-center
           justify-center
@@ -42,7 +42,7 @@ export const Auth = () => {
         text-white
           text-2xl sm:text-3xl md:text-5xl
           font-semibold
-          pb-4 sm:pb-4
+          pb- sm:pb-4
           text-center">
           Crypto Trading
         </h1>
