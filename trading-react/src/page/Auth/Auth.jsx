@@ -30,17 +30,18 @@ export const Auth = () => {
           w-full max-w-md sm:max-w-md md:max-w-xl lg:max-w-xl
           rounded-xl
           bg-white/15 shadow-xl shadow-white
+          
           border border-white/10
           flex flex-col items-center
           justify-center
-          p-6 sm:p-8 md:p-8       
+          p-3 sm:p-8 md:p-8       
         ">
 
 
 
         <h1 className=" 
         text-white
-          text-2xl sm:text-3xl md:text-5xl
+          text-2xl sm:text-3xl md:text-4xl
           font-semibold
           pb- sm:pb-4
           text-center">
