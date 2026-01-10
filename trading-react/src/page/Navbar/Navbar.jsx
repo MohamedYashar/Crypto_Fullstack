@@ -134,6 +134,9 @@ export default function PersistentDrawerLeft() {
             
             width: drawerWidth,
             boxSizing: 'border-box',
+            height: '100dvh', // Full screen height
+            display: 'flex',
+            flexDirection: 'column',
           },
 
           // sx={{  }}
@@ -151,24 +154,19 @@ export default function PersistentDrawerLeft() {
             
             <span  className=' text-xl  ' > Trading  </span> </Button>
 
-
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         
         <Divider />
 
-        <div className=' flex justify-between items-center px-6 py-3 border-b z-50 bg-background bg-opacity-0 sticky top-0 left-0 right-0 ' > 
+        
 
-              <div className='flex items-center gap-3'>
+              <Box sx={{ flexGrow: 1, overflowY: 'auto', px: 2, py: 1 }}>
+                  <SideBar />
+              </Box>
 
-                     <   SideBar/>
-
-
-              </div>
-
-        </div>
-
+       
    
     
     

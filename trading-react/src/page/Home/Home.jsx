@@ -127,19 +127,7 @@ const Home = () => {
 
           <AssetTable coin={displayedCoins} category={category} />
 
-          <div className="flex justify-center mt-5">
-          <Pagination
-            page={page}
-            count={10}            // total pages (adjust from API later)
-            color="primary"
-            onChange={(e, value) => setPage(value)}
-            sx={{
-              "& .MuiPaginationItem-root": {
-                color: "white",
-              },
-            }}
-          />
-        </div>
+         {/* // pagination */}
 
           
         </div>
@@ -161,7 +149,7 @@ const Home = () => {
               </div>
 
               <div className="flex items-end gap-2">
-                <p className="text-xl font-bold">5464</p>
+                <p className="text-xl font-bold">3079.7</p>
                 <p className="text-red-600">
                   <span>-1319049822.578</span>
                   <span> (-0.29803%)</span>
@@ -173,74 +161,7 @@ const Home = () => {
       </div>
 
       {/* CHAT BOT */}
-      <section className="absolute bottom-5 right-5 z-40 flex flex-col items-end gap-2">
-        {isBotRelease && (
-          <div className="rounded-md w-[20rem] md:w-[25rem] h-[55vh] bg-slate-900">
-            {/* Header */}
-            <div className="flex justify-between items-center border-b px-6 h-[12%]">
-              <p className="text-white text-lg font-semibold">Chat Bot</p>
-
-              <IconButton
-                onClick={handleBotRelease}
-                size="small"
-                className="text-white hover:bg-slate-700 rounded-full"
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            </div>
-
-            {/* Body */}
-            <div className="h-[76%] flex flex-col overflow-y-auto gap-5 px-5 py-2">
-              <div className="self-start pb-5">
-                <div className="px-5 py-2 rounded-md bg-slate-800">
-                  <p>Hello Yashar!!</p>
-                  <p>how's the chat bot</p>
-                  <p>like, price, market cap</p>
-                </div>
-              </div>
-
-              {[1, 1, 1, 1, 1].map((_, i) => (
-                <div
-                  key={i}
-                  className={`${i % 2 === 0 ? "self-start" : "self-end"} pb-5`}
-                >
-                  <div className="px-5 py-2 rounded-md bg-slate-800">
-                    {i % 2 === 0 ? (
-                      <p>prompt, who are you</p>
-                    ) : (
-                      <p>hi, Sadham Hussain here</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Input */}
-            <div className="h-[12%] border-t">
-              <TextField
-                className="w-full h-full"
-                fullWidth
-                label="write prompt"
-                onChange={handleChange}
-                value={inputValue}
-                onKeyUp={handleKeyUp}
-              />
-            </div>
-          </div>
-        )}
-
-        <Button
-          onClick={handleBotRelease}
-          className="gap-2"
-          variant="contained"
-        >
-          <MessageCircle
-            size={30}
-            className="fill-[#1e293b] -rotate-90 stroke-none"
-          />
-          <span className="text-xl">Chat Bot</span>
-        </Button>
-      </section>
+      
     </div>
   );
 };

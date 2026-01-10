@@ -43,7 +43,7 @@ export const Auth = () => {
         text-white
           text-2xl sm:text-3xl md:text-4xl
           font-semibold
-          pb- sm:pb-4
+          pb-2 sm:pb-2
           text-center">
           Crypto Trading
         </h1>

@@ -38,7 +38,7 @@ const SideBar = () => {
   }
   
   return (
-    <div className=" mt-10 space-y-10 ">
+    <div className=" flex flex-col gap-8 py- auto-cols-max w-f ">
       {menu.map((item) => (
         <div key={item.name}>
           
@@ -51,6 +51,8 @@ const SideBar = () => {
                     bgcolor: "white",
                     color: "black",
                     borderColor: "#e5e7eb", // optional border color
+                    py: { xs: 1, md: 1,lg:2.5 }, // Smaller padding on mobile, larger on desktop
+                    fontSize: { xs: '0.875rem', md: '1rem' }, // Responsive text size
 
                     "&:hover": {
                     bgcolor: "#1f2937",  // dark gray (Tailwind gray-800)

@@ -1,6 +1,9 @@
 import axios from "axios";
 
-export const API_BASE_URL ="http://localhost:8088";
+// export const API_BASE_URL ="http://localhost:8088";
+
+export const API_BASE_URL ="http://crypto-server-springboot-production.up.railway.app";
+// crypto-server-springboot-production.up.railway.app
 
 const api = axios.create({
 
