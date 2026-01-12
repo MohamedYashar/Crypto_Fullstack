@@ -123,7 +123,17 @@ export const paymentHandler = ({  jwt, amount, paymentMethod }) => async (dispat
       }
     );
 
-    window.location.href = response.data.payment_url;
+     const paymentUrl = response?.data?.payment_url;
+
+    if (!paymentUrl) {
+      console.error("❌ Payment URL not received from server", response.data);
+      throw new Error("Payment URL not received from server");
+    }
+
+    // window.location.href = response.data.payment_url;
+
+    // 🔴 FIX: REDIRECT USER TO PAYMENT GATEWAY
+      window.location.href = paymentUrl;
 
     // dispatch({
     //   type: types.DEPOSIT_MONEY_SUCCESS,

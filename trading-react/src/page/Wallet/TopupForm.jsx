@@ -107,8 +107,7 @@ const TopupForm = ({onClose}) => {
        <DialogActions className="px-0">
                 <Button
                   onClick={() => {
-                    handleSubmit();
-                    onClose();
+                    handleSubmit();                    
                   }}
                   variant="outlined"
                   className="w-full h-14 mt-6" >
