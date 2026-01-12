@@ -24,9 +24,9 @@ import { depositMoney, getUserWallet, getWalletTransactions } from '@/State/Wall
 import { useLocation, useNavigate } from 'react-router-dom';
 // import { Avatar } from '@mui/material';
 
-import api from "@/config/api"; // 🔴 FIX: API IMPORT FOR PAYMENT CONFIRM
 
-import api from '@/config/api';
+import api from '@/config/api';// 🔴 FIX: API IMPORT FOR PAYMENT CONFIRM
+
 
 
 function useQuery(){
