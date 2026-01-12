@@ -129,6 +129,8 @@ export const paymentHandler = ({  jwt, amount, paymentMethod }) => async (dispat
     //   type: types.DEPOSIT_MONEY_SUCCESS,
     //   payload: response.data,
     // });
+
+    
   } catch (error) {
     console.log ("error", error);
     dispatch({

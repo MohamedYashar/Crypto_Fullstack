@@ -24,7 +24,9 @@ import { depositMoney, getUserWallet, getWalletTransactions } from '@/State/Wall
 import { useLocation, useNavigate } from 'react-router-dom';
 // import { Avatar } from '@mui/material';
 
+import api from "@/config/api"; // 🔴 FIX: API IMPORT FOR PAYMENT CONFIRM
 
+import api from '@/config/api';
 
 
 function useQuery(){
@@ -38,12 +40,51 @@ export default function Wallet() {
   const dispatch = useDispatch();
   const { wallet} = useSelector(store => store);
     const query = useQuery();
-    const orderId = query.get("order_id");
+    
     const paymentId= query.get("payment_Id");
-  
+
+      const navigate = useNavigate();
+
+
+    const orderId = query.get("order_id");  
     const razorpayPaymentId = query.get("razorpay_payment_id");
 
-    const navigate = useNavigate();
+      // 🔴 FIX: Razorpay sends ONLY razorpay_payment_id
+
+  // ================= PAYMENT CONFIRMATION =================
+  useEffect(() => {
+    if (orderId && razorpayPaymentId) {
+      api.post(
+        "/api/payment/confirm",
+        null,
+        {
+          params: {
+            order_id: orderId,
+            payment_id: razorpayPaymentId,
+          },
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+          },
+        }
+      )
+      .then(() => {
+        // 🔴 FIX: Refresh wallet AFTER payment confirmation
+        dispatch(getUserWallet(localStorage.getItem("jwt")));
+        dispatch(getWalletTransactions({ jwt: localStorage.getItem("jwt") }));
+
+        // 🔴 FIX: Remove query params to prevent double credit
+        window.history.replaceState({}, document.title, "/wallet");
+      })
+      .catch((err) => {
+        console.error("Payment confirmation failed", err);
+      });
+    }
+  }, [orderId, razorpayPaymentId, dispatch]);
+  // 🔴 FIX: Dependency array added correctly
+
+  // ================= NORMAL LOAD =================
+
+  
   useEffect(()=> {
 
     handleFetchUserWallet();
