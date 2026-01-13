@@ -44,10 +44,10 @@ export const addItemToWatchlist = ({coinId , jwt}) => async (dispatch) => {
 
   try {
     const response = await api.patch( `/api/watchlist/add/coin/${coinId}`,
-        // {},
+        {},
         {
             headers: {
-            Authorization: `Bearer ${jwt}`,
+            Authorization: `Bearer ${localStorage.getItem ("jwt")}`, 
             },       
     }
  );

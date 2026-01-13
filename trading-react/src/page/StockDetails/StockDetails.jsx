@@ -40,9 +40,14 @@ const StockDetails = () => {
 
 
     const handleAddToWatchlist = () => {
-      dispatch( addItemToWatchlist ({coinId:coinDetails?.id, jwt:localStorage.getItem("jwt")
+      dispatch( addItemToWatchlist ({coinId:id, jwt:localStorage.getItem("jwt")
+        
       }));
+
+
     }
+
+    console.log( coinDetails);
 
   return (
 
