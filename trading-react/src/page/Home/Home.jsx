@@ -16,10 +16,16 @@ const Home = () => {
   const [isBotRelease, setIsBotRelease] = React.useState(false);
   const [page, setPage] = React.useState(1);
 
+  // const{ coin} = useSelector( store => store);
+
   const dispatch = useDispatch();
 
   // ✅ FIX: select ONLY coin slice
   const { coinList, top50, loading } = useSelector((state) => state.coin);
+
+  const { coin} = useSelector(store => store);
+
+
 
   useEffect(() => {
     if (category === "all") {
@@ -36,7 +42,7 @@ const Home = () => {
 
 
 
-  const displayedCoins = category === "top50" ? top50 : coinList;
+  // const displayedCoins = category === "top50" ? top50 : coinList;
 
   const handleBotRelease = () => setIsBotRelease(!isBotRelease);
 
@@ -125,7 +131,11 @@ const Home = () => {
             </Button>
           </div>
 
-          <AssetTable coin={displayedCoins} category={category} />
+          {/* <AssetTable coin={displayedCoins} category={category} /> */}
+
+          <AssetTable coin={coin.coinList} category={category} />
+
+          
 
          {/* // pagination */}
 

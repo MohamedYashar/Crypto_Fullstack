@@ -17,41 +17,36 @@ import { addItemToWatchlist, getUserWatchlist } from "@/State/Watchlist/Action";
 
 const StockDetails = () => {
 
-    const [openDialog, setOpenDialog] = React.useState(null);  
-    const handleClickOpen = (type) => {  setOpenDialog(type); };  
-    const handleClose = () => {  setOpenDialog(null);};
-
-    const {watchlist} = useSelector(store =>store);
-
-    const { coinDetails,coinList, loading } = useSelector( state => state.coin );
-
-   console.log (" coinList",  coinList);
-
-    const {id} = useParams();
-    const dispatch = useDispatch();
-    
-    
+   const { coin} = useSelector( store => store);
+   const dispatch = useDispatch();
+   const {id} = useParams();
 
     useEffect (()=> {
-      if (id){
-        dispatch ( fetchCoinDetails({coinId:id,jwt:localStorage.getItem("jwt")}));  }
+      // if (id){}
+        dispatch ( fetchCoinDetails({coinId:id,jwt:localStorage.getItem("jwt")}));  
 
         dispatch ( getUserWatchlist ( localStorage.getItem("jwt")) )
       
     }, [id]);
 
-
     const handleAddToWatchlist = () => {
       dispatch( addItemToWatchlist ({coinId:id, jwt:localStorage.getItem("jwt")
         
       }));
-
-
     }
 
-    console.log( coinDetails);
 
-    // console.log(coin);
+    const [openDialog, setOpenDialog] = React.useState(null);  
+    const handleClickOpen = (type) => {  setOpenDialog(type); };  
+    const handleClose = () => {  setOpenDialog(null);};
+
+  
+    // console.log (" coin this is final",  coin);
+
+    // const { coinDetails,coinList, loading } = useSelector( state => state.coin );
+
+  //  console.log (" coinList2222",   coinList);
+  
 
   return (
 
@@ -64,25 +59,28 @@ const StockDetails = () => {
             <div className= 'flex  gap-5 items-center' >
 
                   <div>
-                      <Avatar src={coinDetails?.image.large} />  
+                      {/* <Avatar src={"https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"} />   */}
+
+                      <Avatar src={coin.coinDetails?.image.large} />  
+                      {/* // unable to change this to dynamic */}
                         
                   </div>
 
               <div>
                   <div className='flex items-center gap-2'>
 
-                      <p>{coinDetails?.symbol.toUpperCase()}</p>
+                      <p>{coin.coinDetails?.symbol.toUpperCase()}</p>
                       <DotIcon className='text-gray-400'/>
-                      <p className='text-gray-400'>{coinDetails?.name}</p>
+                      <p className='text-gray-400'>{coin.coinDetails?.name}</p>
 
                     </div>
                     <div className='flex items-end gap-2'>
 
-                      <p className='text-xl font-bold'>{coinDetails?.market_data.current_price.usd} </p>
+                      <p className='text-xl font-bold'>{coin.coinDetails?.market_data.current_price.usd} </p>
                       <p className='text-red-600' >
                         
-                          <span>{coinDetails?.market_data.market_cap_change_24h}</span>
-                          <span> - ({coinDetails?.market_data.market_cap_change_percentage_24h}) % </span>                
+                          <span>{coin.coinDetails?.market_data.market_cap_change_24h}</span>
+                          <span> - ({coin.coinDetails?.market_data.market_cap_change_percentage_24h}) % </span>                
                       </p>
                   </div>
             </div>
